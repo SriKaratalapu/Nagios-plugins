@@ -9,9 +9,9 @@
 # host and verifies is the ports are whitelisted. The whilelisted ports can be
 # passed using -l option : allowed ports must be separated by commas
 ##### ex : check_openPorts.py -l 22,443,8089
-# or passed using -c option : config must contain list of allowed ports seperated
+# or passed using -c option : config must contain list of allowed ports separated
 # by commas
-##### ex : check_openPorts.py -l -c /etc/allowdPorts.txt
+##### ex : check_openPorts.py -c /etc/allowdPorts.txt
 # example of the config file configuration
 ##### cat /etc/allowdPorts.txt
 ##### 11491,12858,12866,15134,15199
