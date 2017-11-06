@@ -88,12 +88,14 @@ class Ports:
 
     # Method Runs netstat get the list of open ports
     def listeningPorts(self):
-        self.cmdCheck('netstat --listen | grep LISTENING')
-        ports = commands.getoutput('netstat --listen | grep LISTENING ')
+        self.cmdCheck('netstat -tuln | grep LISTEN')
+        ports = commands.getoutput('netstat -tuln | grep LISTEN')
         openPorts = []
         for port in ports.split('\n'):
-            if port.split()[7] not in openPorts:
-               openPorts.append(port.split()[7])
+             
+            if port.split()[3].split(':')[1] not in openPorts\
+	       and port.split()[3].split(':')[1] != '':
+               openPorts.append(port.split()[3].split(':')[1])
         openPorts.sort(key=int)
         return openPorts
 
