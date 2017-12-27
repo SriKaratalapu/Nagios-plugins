@@ -33,7 +33,7 @@ class Ports:
         member variables of self.  Returns true upon success, false
         otherwise
         """
-        description = "Nagios monitoring script for virt host\n"
+        description = "Nagios monitoring script to check for open ports\n"
         usage = ("%prog <options>\n")
         parser = OptionParser(usage=usage, description=description)
 
